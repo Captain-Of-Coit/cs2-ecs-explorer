@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta property="og:title" content="Cities: Skylines 2 - ECS Explorer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://captainofcoit.github.io/cs2-ecs-explorer" />
+    <meta property="og:image" content="https://captainofcoit.github.io/cs2-ecs-explorer/screenshot.png" />
+    <meta property="og:description" content="Site description" />
+    <meta name="theme-color" content="#000000">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities: Skylines 2 - ECS Explorer</title>
+    <style>
+        html, body {
+            background-color: black;
+            margin: 0px;
+            padding: 0px;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        #search {
+            margin: 5px;
+        }
+
+        #sidebar {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            overflow-y: scroll;
+            padding: 10px;
+            /* This effect looks nice, but unfortunately seems to have quite the performance impact
+            /* backdrop-filter: blur(5px) brightness(0.4); */
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        #sidebar a {
+            text-decoration: none;
+            display: block;
+        }
+
+        #sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            color: black;
+            padding: 5px;
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100000;
+            font-size: 18px;
+            opacity: 1.0;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">Loading...</div>
+    <input id="search" style="width: 300px; padding: 5px;" placeholder="Search for namespace or term"></input><button id="reset" onClick="window.location.hash = ''">Reset</button>
+    <div id="sidebar"></div>
+    <script src="./lib/d3.v7.min.js"></script>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
