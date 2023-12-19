@@ -25,6 +25,23 @@
             font-family: sans-serif;
         }
 
+        a {
+            color: rgb(74, 132, 189);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: rgb(87, 134, 192);
+        }
+
+        a:visited:after {
+            content: '(viewed)'
+        }
+
         #search-container {
             position: absolute;
             left: 0px;
@@ -52,19 +69,7 @@
         }
 
         #sidebar a {
-            text-decoration: none;
             display: block;
-        }
-
-        #sidebar a:hover {
-            text-decoration: underline;
-        }
-
-        .tooltip {
-            position: absolute;
-            background-color: white;
-            color: black;
-            padding: 5px;
         }
 
         #loading {
@@ -83,14 +88,6 @@
             left: 0px;
             padding: 5px;
             font-size: 12px;
-        }
-
-        #footer a {
-            text-decoration: none;
-        }
-
-        #footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
