@@ -7,7 +7,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://captain-of-coit.github.io/cs2-ecs-explorer/" />
     <meta property="og:image" content="https://captain-of-coit.github.io/cs2-ecs-explorer/screenshot.png" />
-    <meta property="og:description" content="Site description" />
+    <meta property="og:description" content="Interactive explorer of ECS systems/components in Cities: Skylines 2" />
     <meta name="theme-color" content="#000000">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -25,8 +25,21 @@
             font-family: sans-serif;
         }
 
+        #search-container {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            padding: 5px;
+        }
+
         #search {
             margin: 5px;
+        }
+
+        .bg-fade {
+            /* This effect looks nice, but unfortunately seems to have quite the performance impact
+            /* backdrop-filter: blur(5px) brightness(0.4); */
+            background-color: rgba(0,0,0,0.8);
         }
 
         #sidebar {
@@ -36,9 +49,6 @@
             bottom: 0px;
             overflow-y: scroll;
             padding: 10px;
-            /* This effect looks nice, but unfortunately seems to have quite the performance impact
-            /* backdrop-filter: blur(5px) brightness(0.4); */
-            background-color: rgba(0,0,0,0.8);
         }
 
         #sidebar a {
@@ -66,12 +76,35 @@
             font-size: 18px;
             opacity: 1.0;
         }
+
+        #footer {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            padding: 5px;
+            font-size: 12px;
+        }
+
+        #footer a {
+            text-decoration: none;
+        }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div id="loading">Loading...</div>
-    <input id="search" style="width: 300px; padding: 5px;" placeholder="Search for namespace or term"></input><button id="reset" onClick="window.location.hash = ''">Reset</button>
-    <div id="sidebar"></div>
+    <div id="search-container" class="bg-fade">
+        <input id="search" style="width: 300px; padding: 5px;" placeholder="Search for namespace or term"></input><button id="reset" onClick="window.location.hash = ''">Reset</button>
+    </div>
+    <div id="sidebar" class="bg-fade"></div>
+    <div id="footer" class="bg-fade">
+        <a href="https://github.com/captain-of-coit/cs2-ecs-explorer">Source code</a>
+        <div>MIT Licensed</div>
+        <div>Copyright 2023 @Captain-Of-Coit</div>
+    </div>
     <script src="./lib/d3.v7.min.js"></script>
     <script type="module" src="./index.js"></script>
 </body>
