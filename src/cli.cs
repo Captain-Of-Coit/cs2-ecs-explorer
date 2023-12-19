@@ -13,7 +13,7 @@ using Formatting = Newtonsoft.Json.Formatting;
 
 public static class Globals
 {
-    public const string DECOMPILED_CODE_PATH = @"G:\projects\exported-cs2-1.0.18f1\Game\Game\Game";
+    public const string DECOMPILED_CODE_PATH = @"G:\projects\exported-cs2-1.0.18f1";
     public const string EXPORT_COMPONENTS_PATH = @"data/Components.json";
     public const string EXPORT_SYSTEMS_PATH = @"data/Systems.json";
     public const bool SKIP_DEBUG_SYSTEMS = true;
@@ -297,6 +297,10 @@ public class Parser
 
         Console.WriteLine($"Found {components.Count()} Components");
         Console.WriteLine($"Found {systems.Count()} Systems");
+
+        Console.WriteLine("Sorting...");
+        components.Sort((a, b) => a.name.CompareTo(b.name));
+        systems.Sort((a, b) => a.name.CompareTo(b.name));
 
         Console.WriteLine("Exporting...");
 
